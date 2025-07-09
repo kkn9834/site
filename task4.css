@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    font-family: "Inter", sans-serif ;
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
 }
 
-a{
+a {
     text-decoration: none;
+    color: inherit;
 }
 
-header{
-    max-width: 1500px ;
+header {
+    max-width: 1500px;
     margin: 0 auto;
     padding: 60px 100px 40px; 
     display: flex;
@@ -21,101 +25,133 @@ header{
     justify-content: space-between;
 }
 
-.logo{ font-size: 32px ;
-text-transform: uppercase;
-font-weight: 900 ;
-color: #076bb2;
+.logo {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #076bb2;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
     gap: 35px;
 }
 
-nav a{
+nav a {
     color: black;
     font-size: 20px;
+    transition: color 0.3s;
 }
 
-button{
+nav a:hover {
+    color: #076bb2;
+}
+
+button {
     background: #076bb2;
     color: white;
     border: none;
     text-transform: uppercase;
-    padding: 10px 80px;
+    padding: 10px 30px;
     font-size: 20px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-.lang{
+button:hover {
+    background: #054a7a;
+}
+
+.lang {
     display: flex;
     align-items: center;
     gap: 3px;
+    cursor: pointer;
 }
 
-.burger-btn{
+.burger-btn {
     background: transparent;
     padding: 0;
     display: none;
-
+    border: none;
+    cursor: pointer;
 }
 
-.hero{
+/* Hero Section */
+.hero {
     height: 981px;
-    background: url(task4/hero.png) ;
+    background: url(task4/hero.png) no-repeat center center;
     background-size: cover;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
-    padding-bottom: 140px;
-
 }
-.hero-choose{
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 140px;
+    width: 100%;
+    gap: 0;
+}
+
+.hero-choose {
     padding: 24px 20px;
     width: 235px;
     height: 100px;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center ;
+    justify-content: center;
 }
 
-.hero-choose:nth-child(1){
+.hero-choose:nth-child(1) {
     background: #7b7b7b;
 }
-.hero-choose:nth-child(2){
+
+.hero-choose:nth-child(2) {
     background: #504f4f;
 }
-.hero-choose:nth-child(3){
+
+.hero-choose:nth-child(3) {
     background: #303030;
 }
 
-.hero-choose h4{
+.hero-choose h4 {
     line-height: 160%;
+    font-size: 16px;
+    font-weight: 400;
 }
 
-.hero-choose select{
+.hero-choose select {
     background: transparent;
     border: none;
     color: white;
     font-size: 20px;
     font-weight: 600;
+    cursor: pointer;
+    outline: none;
 }
 
-.hero button{
+.hero-choose select option {
+    color: #333;
+}
+
+.hero-book {
     height: 100px;
-    padding: 20px;
+    padding: 0 30px;
 }
 
-.about-us{
+/* About Us Section */
+.about-us {
     margin: 100px auto;
     max-width: 1080px;
-    padding: 0px 30px;
+    padding: 0 30px;
     line-height: 150%;
     text-align: center;
 }
-
 
 h2 {
     font-size: 64px;
@@ -124,17 +160,19 @@ h2 {
     font-weight: 700;
     line-height: 150%;
     text-align: center;
+    margin-bottom: 40px;
 }
 
-.about-us p{
-    margin: 30px 0px;
+.about-us p {
+    margin: 30px 0;
+    font-size: 18px;
 }
 
-.our-events{
+/* Our Events Section */
+.our-events {
     text-align: center;
     padding: 30px;
 }
-
 
 .cards {
     display: grid;
@@ -144,11 +182,16 @@ h2 {
     gap: 20px;
 }
 
-.card{
+.card {
     position: relative;
+    transition: transform 0.3s;
 }
 
-.card-date{
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-date {
     position: absolute;
     top: 0;
     left: 0;
@@ -160,42 +203,49 @@ h2 {
     justify-content: center;
     flex-direction: column;
     font-size: 16px;
-
 }
 
-.card-date-day{
+.card-date-day {
     font-size: 40px;
+    font-weight: 700;
 }
 
-.card img{
+.card img {
     width: 100%;
     height: 360px;
     object-fit: cover;
+    display: block;
 }
 
-.card-body{
+.card-body {
     padding: 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-transform: uppercase;
+    background: #f9f9f9;
 }
 
 .card-body h4 {
     font-size: 20px;
     font-weight: 500;
     text-transform: none;
+    color: #333;
 }
 
+.events-book {
+    margin-top: 40px;
+}
 
-.contact-us{
+/* Contact Us Section */
+.contact-us {
     max-width: 940px;
     margin: 100px auto;
     padding: 30px;
 }
 
-.contact-form{
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -208,170 +258,243 @@ h2 {
     margin-top: 100px;
 }
 
-.contact-form-fields input{
+.contact-form-fields input {
     border: none;
     border-bottom: 2px solid black;
-    padding: 10px 0px;
+    padding: 10px 0;
     outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
 }
 
+.contact-form-fields input:focus {
+    border-bottom-color: #076bb2;
+}
 
-.contact-form textarea{
+.contact-form textarea {
     resize: none;
     height: 100px;
     border: 1px solid black;
     outline: none;
+    padding: 15px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    transition: border-color 0.3s;
 }
 
-.contact-form button{
-    width: 235px ;
+.contact-form textarea:focus {
+    border-color: #076bb2;
+}
+
+.contact-form button {
+    width: 235px;
     display: block;
     margin: 0 auto;
 }
 
-
-footer{
+/* Footer */
+footer {
     background: #033c65;
     padding: 60px;
-}
-
-.foter-body{
-    max-width: 1160px;
-    margin: 0 auto;
     color: white;
 }
 
-.foter-body h3{
+.footer-body {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.footer-body h3 {
     color: white;
     font-size: 64px;
     text-align: center;
     text-transform: uppercase;
     font-weight: 900;
+    margin-bottom: 60px;
 }
 
-.foter-body-links{
+.footer-body-links {
     display: flex;
     justify-content: space-between;
-    padding: 65px 0px 30px;
+    padding: 65px 0 30px;
+    flex-wrap: wrap;
 }
 
-.foter-body-links ul{
+.footer-body-links ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    min-width: 200px;
+    margin-bottom: 30px;
 }
 
-.foter-body-links a{
+.footer-body-links a {
     font-weight: 100;
     color: white;
+    transition: color 0.3s;
 }
 
-.foter-body-links h4{
+.footer-body-links a:hover {
+    color: #76b6e2;
+}
+
+.footer-body-links h4 {
     margin-bottom: 15px;
     font-family: "Lora", serif;
     font-weight: 700;
     font-size: 24px;
 }
 
-.footer-social-media{
+.footer-social-media {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 20px 0px;
-
+    margin: 20px 0;
 }
 
-.footer-policy{
+.footer-social-media a {
+    transition: opacity 0.3s;
+}
+
+.footer-social-media a:hover {
+    opacity: 0.7;
+}
+
+.footer-policy {
     display: flex;
     align-items: center;
     gap: 15px;
     border-top: 2px solid white;
-    padding: 15px 0px 32px;
+    padding: 15px 0 32px;
+    flex-wrap: wrap;
 }
 
-.footer-policy a{
+.footer-policy a {
     color: white;
     font-weight: 100;
+    transition: color 0.3s;
 }
 
-.rights{
+.footer-policy a:hover {
+    color: #76b6e2;
+}
+
+.rights {
     font-weight: 100;
     opacity: 0.5;
+    font-size: 14px;
 }
 
-
-
+/* Media Queries */
 @media screen and (max-width: 992px) {
-    .burger-btn{
+    header {
+        padding: 30px;
+    }
+    
+    .burger-btn {
         display: block;
     }
-    nav{
+    
+    nav {
         display: none;
+    }
+    
+    .hero-container {
+        flex-wrap: wrap;
+        padding-bottom: 60px;
+    }
+    
+    .hero-choose {
+        width: 50%;
+    }
+    
+    .hero-book {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and(max-width768px) {
-    .hero{
+@media screen and (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding-top: 60px;
+    }
+    
+    .hero-container {
         flex-direction: column;
         align-items: center;
-        justify-content: end;
     }
-
-    .hero buttton, 
+    
     .hero-choose {
-        width: max(70%, 300px);
+        width: 100%;
+        max-width: 400px;
     }
-
-    .contact-form-fields{
-        grid-template-columns: repeat(1,1fr);
+    
+    .contact-form-fields {
+        grid-template-columns: 1fr;
         gap: 30px;
         margin-top: 40px;
     }
-
-    .contact-form{
+    
+    .contact-form {
         gap: 30px;
     }
-
-                 
-       
+    
+    .footer-body h3 {
+        font-size: 48px;
+    }
 }
 
-@media  screen and (max-width: 550px) {
-    .foter-body-links, .footer-policy, .footer-social-media, .rights{
+@media screen and (max-width: 550px) {
+    .footer-body-links, 
+    .footer-policy, 
+    .footer-social-media, 
+    .rights {
         display: none;
     }
-    .footer-body h3{
+    
+    .footer-body h3 {
         font-size: 32px;
-
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
     }
 }
-    
-    
-@media  screen and (max-width: 450px) {
-    header{
-        padding: 30px;
-    }
-    .logo{
-        font-size: 20px;
-    }
-    h2{
-        font-size: 20px;
-    }
 
-    .about-us p{
-        font-size: 14px;
-        margin: 14px 0px;
-        color: #303030;
+@media screen and (max-width: 450px) {
+    header {
+        padding: 20px;
     }
-
-    .card-date{
-        width: 70px;
-        height: 70px;
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    .about-us p {
         font-size: 16px;
+        margin: 20px 0;
     }
-
-    .card-date-day{
-        font-size: 20px;
+    
+    .card-date {
+        width: 80px;
+        height: 80px;
+        font-size: 14px;
     }
-
+    
+    .card-date-day {
+        font-size: 28px;
+    }
+    
+    .footer-body h3 {
+        font-size: 28px;
+    }
 }
